@@ -1,9 +1,11 @@
  const express = require('express')
  const user = require('./user')
+ const cors = require('cors')
 
  const bodyParser = require('body-parser');
  
  const app=express()
+ app.use(cors())
  const mongoose = require('mongoose');
  mongoose.connect('')
   .then(() => console.log('Connected!'));

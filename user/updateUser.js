@@ -8,18 +8,18 @@ const updateUser= (req, res) =>{
 let data = req.body
 
 
-// userModel.updateOne({"name":"ali"} , {$set:{"age":data.age}},
-// (err) => {
-//     if (err){
-//         console.log(err);
-//     }else{
-//         console.log("hogaya update");
+userModel.updateOne({"name":"ali"} , {$set:{"age":data.age}},
+(err) => {
+    if (err){
+        console.log(err);
+    }else{
+        console.log("hogaya update");
 
-//     }
-// })
-// // arr[data.id].name=data.name
+    }
+})
+// arr[data.id].name=data.name
 
-// res.status(200).send({"message" : "hogaya update"})
+res.status(200).send({"message" : "hogaya update"})
 
 
 }
