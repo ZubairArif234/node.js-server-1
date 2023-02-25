@@ -9,6 +9,7 @@ const userSchema = new Schema({
     name: { type: String, required:true },
     // age: { type: Number, required:true},
     password: { type: String, required:true },
+    pic: { type: String },
  // bio: { type: String, match: /[a-z]/ },
     // date: { type: Date, default: Date.now },
     // buff: Buffer/

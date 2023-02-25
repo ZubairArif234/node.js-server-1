@@ -12,7 +12,7 @@ const getUser= (req, res) =>{
         }else{
             console.log('mil gaya' , doc);
 
-            res.status(200).send({'message === milgaya': doc})
+            res.status(200).send( doc)
         }
     })
 

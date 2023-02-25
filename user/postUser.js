@@ -4,17 +4,51 @@ const arr = require('../constat/array')
 
 const userModel = require('../schemas/userscheme')
 const bcrypt = require('bcrypt')
-const Joi = require('joi');
 const jwt = require('jsonwebtoken');
+const Joi = require('joi');
+// const imgtest = require('./assets/imgtesting.jpeg')
 
 let privateKey = 'zubairjwt'
+// const cloudinary = require('cloudinary').v2;
+
+
+// // Configuration 
+// cloudinary.config({
+//   cloud_name: "drqtz5s5m",
+//   api_key: "439336325423782",
+//   api_secret: "EUesYP69VCtzuY9PQUKAxwARDzI"
+// });
 
 const postUser = async (req, res) => {
 
     let data = req.body;
 
 
+
+//     const rescloud = cloudinary.uploader.upload(data.pic, {public_id: "meripic"})
+
+//     rescloud.then((data) => {
+//   console.log(data);
+//   console.log(data.secure_url);
+// }).catch((err) => {
+//   console.log(err);
+// });
+
+
+// // Generate 
+// const url = cloudinary.url("meripic", {
+//   width: 100,
+//   height: 150,
+//   Crop: 'fill'
+// });
+
+
+
+// // The output url
+// console.log(url);
+
     const hash = bcrypt.hashSync(data.password, 5);
+   
 
     const newDevide = new userModel({
         name: data.name,
@@ -27,7 +61,8 @@ const postUser = async (req, res) => {
         email: Joi.string().email(),
         name: Joi.string().required(),
         
-        password: Joi.string()
+        password: Joi.string(),
+        pic: Joi.string()
             // .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
     })
     try {
